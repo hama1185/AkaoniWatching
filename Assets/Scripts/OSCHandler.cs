@@ -56,12 +56,10 @@ public struct ClientLog
 public class OSCHandler : MonoBehaviour
 {
 	#region Singleton Constructors
-	static OSCHandler()
-	{
+	static OSCHandler(){
 	}
 
-	OSCHandler()
-	{
+	OSCHandler(){
 	}
 	
 	public static OSCHandler Instance 
