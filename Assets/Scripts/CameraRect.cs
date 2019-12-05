@@ -26,8 +26,8 @@ public class CameraRect : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         UpCamera = GameObject.Find("UpCamera").GetComponent<Camera>();//0,0,0.6,1
-        VillagerCamera = GameObject.Find("Villager").transform.GetChild(0).GetComponent<Camera>();//0.6,0,0.4,0.5
-        OgreCamera = GameObject.Find("Ogre").transform.GetChild(0).GetComponent<Camera>();//0.6,0.5,0.4,0.5
+        VillagerCamera = GameObject.Find("Villager").transform.GetChild(0).GetChild(0).GetComponent<Camera>();//0.6,0,0.4,0.5
+        OgreCamera = GameObject.Find("Ogre").transform.GetChild(0).GetChild(0).GetComponent<Camera>();//0.6,0.5,0.4,0.5
     }
 
     // Update is called once per frame
