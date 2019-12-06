@@ -19,12 +19,12 @@ public class Server : MonoBehaviour {
     // public Text c;
     void Awake() {
         if(this.name == "Ogre"){
-            serverName = "Astatus";
+            serverName = "Ogre";
             inComingPort = HostList.phone1.port_audienceserver;
             // a.text = "ogre";
         }
         else{
-            serverName = "Bstatus";
+            serverName = "Villager";
             inComingPort = HostList.phone2.port_audienceserver;
             // a.text = "villager";
         }
@@ -49,8 +49,6 @@ public class Server : MonoBehaviour {
 			// show the last received from the log in the Debug console
             
 			if(item.Value.log.Count > 0){
-                
-                Debug.Log("b");
                 // b.text = "value get";
 				int lastPacketIndex = item.Value.packets.Count - 1;
                 

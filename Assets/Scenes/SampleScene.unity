@@ -1986,9 +1986,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverName: 
   inComingPort: 0
-  a: {fileID: 775013012}
-  b: {fileID: 958690209}
-  c: {fileID: 1231382438}
 --- !u!114 &1614615433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2292,9 +2289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverName: 
   inComingPort: 0
-  a: {fileID: 775013012}
-  b: {fileID: 958690209}
-  c: {fileID: 1231382438}
 --- !u!114 &1794785684
 MonoBehaviour:
   m_ObjectHideFlags: 0
