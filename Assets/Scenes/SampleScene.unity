@@ -1331,7 +1331,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0b3019756639ca4408da7f0e796279ff,
         type: 3}
       propertyPath: m_Name
-      value: AnotherOgre
+      value: Ogre
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0b3019756639ca4408da7f0e796279ff,
         type: 3}
@@ -2775,7 +2775,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0b3019756639ca4408da7f0e796279ff,
         type: 3}
       propertyPath: m_Name
-      value: AnotherVillager
+      value: Villager
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0b3019756639ca4408da7f0e796279ff,
         type: 3}
