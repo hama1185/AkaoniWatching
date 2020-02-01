@@ -23,8 +23,8 @@ static public class HostList {
         8007,
         8008
     );
-    static public string ip_audience = "192.168.11.60";
-    static public string ip_umpire = "192.168.11.24";
+    static public string ip_audience = "192.168.11.60";//古いスマホ
+    static public string ip_umpire = "192.168.11.61";//古いスマホ
 
     static public ID clientID = new ID(
         "enemy",
