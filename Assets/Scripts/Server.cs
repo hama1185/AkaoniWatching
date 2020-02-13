@@ -55,6 +55,8 @@ public class Server : MonoBehaviour {
                 Vector3 position;
                 Quaternion camRotation;
                 float angleY;
+                float charMind;
+                float charRelax;
                 position.x = (float)item.Value.packets[lastPacketIndex].Data[0];
                 position.y = (float)item.Value.packets[lastPacketIndex].Data[1];
                 position.z = (float)item.Value.packets[lastPacketIndex].Data[2];
@@ -64,6 +66,9 @@ public class Server : MonoBehaviour {
                 camRotation.z = (float)item.Value.packets[lastPacketIndex].Data[5];
                 camRotation.w = (float)item.Value.packets[lastPacketIndex].Data[6];
 
+                charMind = (float)item.Value.packets[lastPacketIndex].Data[7];
+                charRelax = (float)item.Value.packets[lastPacketIndex].Data[8];
+
                 angleY = camRotation.eulerAngles.y;
 
 				if(item.Value.packets[lastPacketIndex].Address.ToString() == "/Ogre"){
@@ -71,11 +76,15 @@ public class Server : MonoBehaviour {
                     OgreStatus.angleY = angleY;
                     OgreStatus.position = position;
                     OgreStatus.quaternion = camRotation;
+                    OgreStatus.mind = charMind;
+                    OgreStatus.relax = charRelax;
 				}
                 else{
                     VillagerStatus.angleY = angleY;
                     VillagerStatus.position = position;
                     VillagerStatus.quaternion = camRotation;
+                    VillagerStatus.mind = charMind;
+                    VillagerStatus.relax = charRelax;
                     // c.text = "vllager sent";
                 }
 			}

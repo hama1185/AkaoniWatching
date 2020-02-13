@@ -17,6 +17,11 @@ public class CameraRect : MonoBehaviour
     Camera VillagerCamera;
     Camera OgreCamera;
 
+    Slider villagerMindSlider;
+    Slider villagerRelaxSlider;
+    Slider ogreMindSlider;
+    Slider ogreRelaxSlider;
+
     Dictionary<int, string> dict = new Dictionary<int, string>(){
         {0, "UpCamera"},
         {1, "OgreCamera"},
@@ -28,12 +33,22 @@ public class CameraRect : MonoBehaviour
         UpCamera = GameObject.Find("UpCamera").GetComponent<Camera>();//0,0,0.6,1
         VillagerCamera = GameObject.Find("Villager").transform.GetChild(0).GetChild(0).GetComponent<Camera>();//0.6,0,0.4,0.5
         OgreCamera = GameObject.Find("Ogre").transform.GetChild(0).GetChild(0).GetComponent<Camera>();//0.6,0.5,0.4,0.5
+        villagerMindSlider = GameObject.Find("Canvas").transform.Find("villagerMindSlider").GetComponent<Slider>();
+        villagerRelaxSlider = GameObject.Find("Canvas").transform.Find("villagerRelaxSlider").GetComponent<Slider>();
+        ogreMindSlider = GameObject.Find("Canvas").transform.Find("ogreMindSlider").GetComponent<Slider>();
+        ogreRelaxSlider = GameObject.Find("Canvas").transform.Find("ogreRelaxSlider").GetComponent<Slider>();
+
+        width = Screen.width;
+        height = Screen.height;
+
+        ogreMindSlider.transform.position = new Vector3(width * 19 / 30,height *  20 / 30, 0);
+        ogreRelaxSlider.transform.position = new Vector3(width * 20 / 30,height *  20 / 30, 0);
+        villagerMindSlider.transform.position = new Vector3(width * 19 / 30,height *  5 / 30, 0);
+        villagerRelaxSlider.transform.position = new Vector3(width * 20 / 30,height *  5 / 30, 0);
     }
 
     // Update is called once per frame
     void Update(){
-        width = Screen.width;
-        height = Screen.height;
         if(Application.isEditor){
             if(Input.GetMouseButtonUp(0)){
                 Vector3 mousePosition = Input.mousePosition;
@@ -48,10 +63,14 @@ public class CameraRect : MonoBehaviour
                         else if(dict[0] == "OgreCamera"){
                             OgreCamera.rect  = new Rect(0.6f, 0.5f, 0.4f, 0.5f);
                             rightUP.text = "鬼視点";
+                            ogreMindSlider.transform.position = new Vector3(width * 19 / 30,height *  20 / 30, 0);
+                            ogreRelaxSlider.transform.position = new Vector3(width * 20 / 30,height *  20 / 30, 0);
                         }
                         else if(dict[0] == "VillagerCamera"){
                             VillagerCamera.rect  = new Rect(0.6f, 0.5f, 0.4f, 0.5f);
                             rightUP.text = "村人視点";
+                            villagerMindSlider.transform.position = new Vector3(width * 19 / 30,height *  20 / 30, 0);
+                            villagerRelaxSlider.transform.position = new Vector3(width * 20 / 30,height *  20 / 30, 0);
                         }
 
                         if(dict[1] == "UpCamera"){
@@ -61,17 +80,23 @@ public class CameraRect : MonoBehaviour
                         else if(dict[1] == "OgreCamera"){
                             OgreCamera.rect  = new Rect(0, 0, 0.6f, 1);
                             left.text = "鬼視点";
+                            
+                            ogreMindSlider.transform.position = new Vector3(width / 30,height *  5 / 30, 0);
+                            ogreRelaxSlider.transform.position = new Vector3(width * 2 / 30,height *  5 / 30, 0);
                         }
                         else if(dict[1] == "VillagerCamera"){
                             VillagerCamera.rect  = new Rect(0, 0, 0.6f, 1);
                             left.text = "村人視点";
+
+                            villagerMindSlider.transform.position = new Vector3(width / 30,height *  5 / 30, 0);
+                            villagerRelaxSlider.transform.position = new Vector3(width * 2 / 30,height *  5 / 30, 0);
                         }
 
                         swapName = dict[0];
                         dict[0] = dict[1];
                         dict[1] = swapName;
                             
-                        }
+                    }
                         if(mousePosition.y <= (height / 2) - 30){//右下
                             if(dict[0] == "UpCamera"){
                                 UpCamera.rect  = new Rect(0.6f, 0, 0.4f, 0.5f);
@@ -80,10 +105,14 @@ public class CameraRect : MonoBehaviour
                             else if(dict[0] == "OgreCamera"){
                                 OgreCamera.rect  = new Rect(0.6f, 0, 0.4f, 0.5f);
                                 rightDOWN.text = "鬼視点";
+                                ogreMindSlider.transform.position = new Vector3(width * 19 / 30,height *  5 / 30, 0);
+                                ogreRelaxSlider.transform.position = new Vector3(width * 20 / 30,height *  5 / 30, 0);
                             }
                             else if(dict[0] == "VillagerCamera"){
                                 VillagerCamera.rect  = new Rect(0.6f, 0, 0.4f, 0.5f);
                                 rightDOWN.text = "村人視点";
+                                villagerMindSlider.transform.position = new Vector3(width * 19 / 30,height *  5 / 30, 0);
+                                villagerRelaxSlider.transform.position = new Vector3(width * 20 / 30,height *  5 / 30, 0);
                             }
 
                             if(dict[2] == "UpCamera"){
@@ -93,10 +122,14 @@ public class CameraRect : MonoBehaviour
                             else if(dict[2] == "OgreCamera"){
                                 OgreCamera.rect  = new Rect(0, 0, 0.6f, 1);
                                 left.text = "鬼視点";
+                                ogreMindSlider.transform.position = new Vector3(width / 30,height *  5 / 30, 0);
+                                ogreRelaxSlider.transform.position = new Vector3(width * 2 / 30,height *  5 / 30, 0);
                             }
                             else if(dict[2] == "VillagerCamera"){
                                 VillagerCamera.rect  = new Rect(0, 0, 0.6f, 1);
                                 left.text = "村人視点";
+                                villagerMindSlider.transform.position = new Vector3(width / 30,height *  5 / 30, 0);
+                                villagerRelaxSlider.transform.position = new Vector3(width * 2 / 30,height *  5 / 30, 0);
                             }
                             swapName = dict[0];
                             dict[0] = dict[2];

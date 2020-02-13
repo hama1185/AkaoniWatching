@@ -7,6 +7,8 @@ public class VillagerStatus : MonoBehaviour
     public static Vector3 position{get;set;}
     public static Quaternion quaternion{get;set;}
     public static float angleY{get;set;}
+    public static float mind{get;set;}
+    public static float relax{get;set;}
     GameObject cameraAdjuster;
     GameObject cam;
     // Start is called before the first frame update
